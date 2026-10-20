@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agueda Tours &amp; Travel — ¡Su agencia de viajes!</title>
+<meta name="description" content="Agueda Tours & Travel: boletos aéreos, hoteles, paquetes todo incluido, cruceros y asesoría de viajes.">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D62828; --gold:#F4C430; --navy:#13213C; --cream:#FFFBF2;
+  --muted:#4A5568; --soft:#C9D3E6; --line:#F0E6CC; --field:#D9D2BF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--navy);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.5}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4vw,48px);line-height:1.1;font-weight:800}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 28px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:none;cursor:pointer;font-family:inherit;transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn-red{background:var(--red);color:#fff}
+.btn-ghost{color:#fff;border:2px solid rgba(255,255,255,.4)}
+.btn-white{background:#fff;color:var(--navy)}
+svg{flex:none}
+
+/* Encabezado */
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:58px;height:58px;object-fit:cover;object-position:50% 42%;border-radius:12px}
+.brand b{display:block;font-size:19px;font-weight:800}
+.brand small{display:block;font-size:13px;font-weight:600;color:var(--red)}
+nav.main{display:flex;flex-wrap:wrap;align-items:center;gap:6px 26px;font-weight:600;font-size:15px}
+nav.main a{text-decoration:none}
+nav.main a:not(.btn):hover{color:var(--red)}
+nav.main .btn{min-height:44px;padding:10px 22px;font-size:15px}
+@media (max-width:760px){nav.main a:not(.btn){display:none}}
+
+/* Portada */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero .globe{position:absolute;right:-140px;top:-90px;width:620px;height:620px;opacity:.14;pointer-events:none}
+.hero-in{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:88px;padding-bottom:96px;position:relative}
+.hero-copy{flex:999 1 500px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:rgba(244,196,48,.14);color:var(--gold);font-size:14px;font-weight:700;padding:8px 16px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
+.hero h1{font-size:clamp(38px,6vw,72px);line-height:1.04;font-weight:800;letter-spacing:-.03em}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:19px;line-height:1.6;color:var(--soft);max-width:560px}
+.row{display:flex;flex-wrap:wrap;gap:14px}
+.card-form{flex:1 1 330px;min-width:0;background:#fff;color:var(--navy);border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:16px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.card-form .t{font-size:22px;font-weight:800}
+.card-form .s{font-size:14px;color:var(--muted)}
+label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700}
+input,select,textarea{font:inherit;font-size:15px;font-weight:500;padding:13px 14px;border:1.5px solid var(--field);border-radius:12px;background:var(--cream);color:var(--navy);width:100%}
+input:focus,select:focus,textarea:focus{outline:3px solid rgba(214,40,40,.25);border-color:var(--red)}
+.split{display:flex;flex-wrap:wrap;gap:12px}
+.split label{flex:1 1 140px}
+.btn-block{width:100%;justify-content:center;border-radius:12px}
+
+/* Franja */
+.strip{background:var(--gold)}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;padding-top:20px;padding-bottom:20px;font-weight:700;font-size:15px}
+.strip span{display:inline-flex;align-items:center;gap:8px}
+
+/* Secciones */
+section.block{padding:96px 0}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:44px}
+.sec-head > div{display:flex;flex-direction:column;gap:12px;max-width:660px}
+.sec-head p{font-size:17px;line-height:1.6;color:var(--muted);max-width:420px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
+.dest{background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.dest:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(19,33,60,.12)}
+.dest .top{height:190px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;position:relative;overflow:hidden}
+.dest .top svg{position:absolute;right:-30px;bottom:-40px}
+.dest .tag{align-self:flex-start;background:rgba(255,255,255,.18);font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px}
+.dest .name{font-size:32px;font-weight:800;letter-spacing:-.02em;position:relative}
+.dest .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:14px;flex:1}
+.dest .body p{font-size:15px;line-height:1.6;color:var(--muted)}
+.dest .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;border-top:1px dashed #E6DCC3;font-size:14px;color:var(--muted)}
+.dest .foot strong{font-size:18px;color:var(--navy)}
+.dest .foot a{font-weight:700;color:var(--red);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:6px}
+
+.services{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc{background:var(--cream);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--gold);display:flex;align-items:center;justify-content:center}
+.svc h3{font-size:20px;font-weight:800}
+.svc p{font-size:15px;line-height:1.6;color:var(--muted)}
+
+.about{display:flex;flex-wrap:wrap;gap:52px;align-items:flex-start}
+.about .txt{flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.about .txt p{font-size:17px;line-height:1.7;color:var(--muted)}
+.steps{flex:1 1 440px;min-width:0;background:var(--navy);color:#fff;border-radius:28px;padding:38px;display:flex;flex-direction:column;gap:26px}
+.steps .t{font-size:24px;font-weight:800}
+.step{display:flex;gap:18px;align-items:flex-start}
+.num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+.step b{display:block;font-size:18px}
+.step span{font-size:15px;line-height:1.6;color:var(--soft)}
+
+.cta{background:var(--red);color:#fff;border-radius:32px;padding:60px 44px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(28px,3.6vw,44px)}
+.cta p{font-size:18px;line-height:1.6;color:#FFE9E9;margin-top:10px}
+.cta .star{position:absolute;right:36%;top:-30px;opacity:.35}
+@media (max-width:600px){.cta{padding:44px 26px}}
+
+.contact{display:flex;flex-wrap:wrap;gap:48px}
+.contact .info{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.item{display:flex;gap:14px;align-items:center}
+.item .box{width:48px;height:48px;flex:none;border-radius:14px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.item small{display:block;font-size:13px;color:var(--muted)}
+.item a{text-decoration:none;font-weight:700}
+.contact form{flex:1 1 460px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;display:flex;flex-direction:column;gap:18px}
+.contact form .split label{flex:1 1 200px}
+textarea{resize:vertical}
+
+footer{background:var(--navy);color:var(--soft);margin-top:0}
+footer .wrap{padding-top:52px;padding-bottom:30px;display:flex;flex-direction:column;gap:30px}
+.ftop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px}
+.ftop b{font-size:22px;color:#fff}
+.ftop .gold{color:var(--gold);font-weight:700;display:block;margin:6px 0}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 26px;font-weight:600}
+footer nav a{color:#fff;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+footer nav a:hover{color:var(--gold)}
+.copy{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-size:13px}
+
+.wa-float{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#1FA855;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,.25);z-index:20}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <a class="brand" href="#inicio">
+      <img src="logo.jpg" alt="Logo de Agueda Tours &amp; Travel">
+      <div><b>Agueda Tours &amp; Travel</b><small>¡Su agencia de viajes!</small></div>
+    </a>
+    <nav class="main" aria-label="Principal">
+      <a href="#destinos">Destinos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn-red" href="#contacto">Cotizar viaje</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <svg class="globe" aria-hidden="true" viewBox="0 0 200 200" fill="none" stroke="#F4C430" stroke-width="1.2"><circle cx="100" cy="100" r="80"/><ellipse cx="100" cy="100" rx="40" ry="80"/><ellipse cx="100" cy="100" rx="70" ry="80"/><line x1="20" y1="100" x2="180" y2="100"/><path d="M30 60 H170 M30 140 H170"/><ellipse cx="100" cy="100" rx="98" ry="28" transform="rotate(-18 100 100)"/></svg>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <span class="pill"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg>Viajes a su medida</span>
+      <h1>El mundo le espera.<br><span>Nosotros le llevamos.</span></h1>
+      <p>Boletos aéreos, hoteles, paquetes todo incluido y cruceros. Planificamos cada detalle de su viaje para que usted solo se preocupe por disfrutar.</p>
+      <div class="row">
+        <a class="btn btn-red js-wa" href="#" data-msg="Hola, quiero información sobre un viaje.">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Escríbanos por WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#destinos">Ver destinos</a>
+      </div>
+    </div>
+
+    <form class="card-form" id="quick" aria-label="Solicitar cotización">
+      <div><div class="t">Planifique su viaje</div><div class="s">Le respondemos con una cotización sin compromiso.</div></div>
+      <label>¿A dónde quiere ir?<input name="destino" type="text" placeholder="Ej.: Punta Cana, Madrid, Cancún…" required></label>
+      <div class="split">
+        <label>Fecha de salida<input name="fecha" type="date"></label>
+        <label>Pasajeros<select name="pasajeros"><option>1 adulto</option><option>2 adultos</option><option>Familia</option><option>Grupo</option></select></label>
+      </div>
+      <button class="btn btn-red btn-block" type="submit">Solicitar cotización</button>
+    </form>
+  </div>
+</section>
+
+<section class="strip" aria-label="Lo que ofrecemos">
+  <div class="wrap">
+    <span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Atención personalizada</span>
+    <span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Facilidades de pago</span>
+    <span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Viajes nacionales e internacionales</span>
+    <span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento antes y durante su viaje</span>
+  </div>
+</section>
+
+<section class="block" id="destinos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Destinos populares</span><h2>¿A dónde le llevamos esta vez?</h2></div>
+      <p>Desde las playas de nuestra isla hasta las grandes capitales del mundo. Si no ve su destino, pregúntenos.</p>
+    </div>
+    <div class="grid" id="dest-grid"></div>
+  </div>
+</section>
+
+<section class="block services" id="servicios">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Nuestros servicios</span><h2>Todo lo que necesita para viajar, en un solo lugar</h2></div></div>
+    <div class="grid">
+      <div class="svc"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span><h3>Boletos aéreos</h3><p>Buscamos las mejores tarifas y horarios para vuelos nacionales e internacionales.</p></div>
+      <div class="svc"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14M9 21v-6h6v6M8 10h.01M12 10h.01M16 10h.01"/></svg></span><h3>Hoteles y resorts</h3><p>Reservas en hoteles de ciudad y resorts de playa según su presupuesto.</p></div>
+      <div class="svc"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21c0-6 3-9 7-9s7 3 7 9M12 3c-3 0-7 2-8 6h16c-1-4-5-6-8-6z"/></svg></span><h3>Paquetes todo incluido</h3><p>Vuelo, hotel, traslados y comidas en un mismo paquete, sin complicaciones.</p></div>
+      <div class="svc"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0M4 16l-1-5h18l-2 5M8 11V6h8v5M12 3v3"/></svg></span><h3>Cruceros</h3><p>Recorridos por el Caribe, Europa y más, con la naviera que mejor le convenga.</p></div>
+      <div class="svc"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><h3>Asesoría de visados</h3><p>Le orientamos con los requisitos y documentos para su solicitud de visa.</p></div>
+      <div class="svc"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Seguro de viaje</h3><p>Viaje tranquilo con cobertura médica y de equipaje durante su estadía.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="nosotros">
+  <div class="wrap about">
+    <div class="txt">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Viajar con nosotros es viajar en familia</h2>
+      <p>En Agueda Tours &amp; Travel creemos que cada viaje es una historia. Le escuchamos, entendemos lo que busca y diseñamos una experiencia a su medida, con trato cercano de principio a fin.</p>
+      <p>[AÑADA AQUÍ LA HISTORIA DE LA AGENCIA: AÑOS DE EXPERIENCIA, FUNDADORA, LO QUE LES HACE ESPECIALES]</p>
+    </div>
+    <div class="steps">
+      <div class="t">Así de fácil es viajar</div>
+      <div class="step"><span class="num">1</span><div><b>Cuéntenos su idea</b><span>Destino, fechas, cuántas personas viajan y su presupuesto.</span></div></div>
+      <div class="step"><span class="num">2</span><div><b>Reciba su cotización</b><span>Le enviamos opciones claras, con todo lo que incluye cada una.</span></div></div>
+      <div class="step"><span class="num">3</span><div><b>¡Haga las maletas!</b><span>Reservamos todo y le acompañamos hasta que regrese a casa.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 0">
+  <div class="wrap">
+    <div class="cta">
+      <svg class="star" aria-hidden="true" width="120" height="120" viewBox="0 0 24 24" fill="#F4C430"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg>
+      <div style="max-width:620px;position:relative"><h2>¿Listo para su próxima aventura?</h2><p>Escríbanos hoy y empiece a planificar el viaje que tanto ha soñado.</p></div>
+      <a class="btn btn-white js-wa" href="#" data-msg="Hola, quiero planificar un viaje." style="position:relative">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        Hablar con una agente
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contacto">
+  <div class="wrap contact">
+    <div class="info">
+      <span class="eyebrow">Contacto</span>
+      <h2>Estamos para servirle</h2>
+      <div class="item"><span class="box"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span><div><small>WhatsApp / Teléfono</small><a class="js-wa" href="#" data-msg="Hola, quiero información.">[SU TELÉFONO]</a></div></div>
+      <div class="item"><span class="box"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><small>Correo electrónico</small><a href="mailto:[SU CORREO]">[SU CORREO]</a></div></div>
+      <div class="item"><span class="box"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><small>Oficina</small><b>[SU DIRECCIÓN]</b></div></div>
+      <div class="item"><span class="box"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13213C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Horario</small><b>[SU HORARIO DE ATENCIÓN]</b></div></div>
+    </div>
+    <form id="contact" aria-label="Formulario de contacto">
+      <div class="split">
+        <label>Nombre<input name="nombre" type="text" placeholder="Su nombre completo" required></label>
+        <label>Teléfono<input name="telefono" type="tel" placeholder="Su número de WhatsApp"></label>
+      </div>
+      <label>Correo electrónico<input name="correo" type="email" placeholder="nombre@correo.com"></label>
+      <label>Cuéntenos sobre su viaje<textarea name="mensaje" rows="5" placeholder="Destino, fechas, cantidad de personas, presupuesto…" required></textarea></label>
+      <button class="btn btn-red btn-block" type="submit">Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ftop">
+      <div style="max-width:360px"><b>Agueda Tours &amp; Travel</b><span class="gold">¡Su agencia de viajes!</span><span style="font-size:14px">Hacemos realidad sus viajes con dedicación y cariño.</span></div>
+      <nav aria-label="Pie de página">
+        <a href="#destinos">Destinos</a><a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a>
+        <a href="#">Instagram [@USUARIO]</a><a href="#">Facebook [PÁGINA]</a>
+      </nav>
+    </div>
+    <div class="copy">© <span id="year">2026</span> Agueda Tours &amp; Travel. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="#" data-msg="Hola, quiero información sobre un viaje." aria-label="Escribir por WhatsApp">
+  <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+</a>
+
+<script>
+/* ====== CAMBIE AQUÍ SU NÚMERO DE WHATSAPP ======
+   Solo números, con código de país. Ej.: República Dominicana 1 + 809/829/849 + número
+   "18095551234"  */
+var WHATSAPP = "1XXXXXXXXXX";
+
+var destinos = [
+  { nombre:"Punta Cana", pais:"República Dominicana", color:"#0E6E6D", texto:"Playas de arena blanca, aguas turquesa y resorts todo incluido para descansar de verdad." },
+  { nombre:"Samaná",     pais:"República Dominicana", color:"#2D6A4F", texto:"Avistamiento de ballenas jorobadas en temporada, el Salto El Limón y playas vírgenes." },
+  { nombre:"Cancún",     pais:"México",               color:"#1D4E89", texto:"El Caribe mexicano: zona hotelera, parques temáticos y las ruinas mayas a un paso." },
+  { nombre:"Nueva York", pais:"Estados Unidos",       color:"#13213C", texto:"Times Square, Broadway, Central Park y las mejores compras de la Gran Manzana." },
+  { nombre:"Madrid",     pais:"España",               color:"#9B2335", texto:"Museos, tapas y vida de plaza; la puerta de entrada perfecta para recorrer Europa." },
+  { nombre:"Medellín",   pais:"Colombia",             color:"#6D2E46", texto:"La ciudad de la eterna primavera: cultura, gastronomía y paisajes de montaña." }
+];
+
+function waLink(msg){ return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg); }
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+
+var grid = document.getElementById("dest-grid");
+grid.innerHTML = destinos.map(function(d){
+  return '<article class="dest">' +
+    '<div class="top" style="background:'+d.color+'">' +
+      '<svg aria-hidden="true" width="190" height="190" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>' +
+      '<span class="tag">'+esc(d.pais)+'</span><span class="name">'+esc(d.nombre)+'</span>' +
+    '</div>' +
+    '<div class="body"><p>'+esc(d.texto)+'</p>' +
+      '<div class="foot"><span>Desde <strong>[PRECIO]</strong></span>' +
+      '<a class="js-wa" href="#" data-msg="Hola, quiero cotizar un viaje a '+esc(d.nombre)+'.">Cotizar ' +
+      '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>' +
+    '</div></article>';
+}).join("");
+
+document.querySelectorAll(".js-wa").forEach(function(a){
+  a.href = waLink(a.getAttribute("data-msg") || "Hola");
+  a.target = "_blank"; a.rel = "noopener";
+});
+
+document.getElementById("quick").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = e.target;
+  var msg = "Hola, quiero una cotización.\nDestino: " + f.destino.value +
+            "\nFecha de salida: " + (f.fecha.value || "por definir") +
+            "\nPasajeros: " + f.pasajeros.value;
+  window.open(waLink(msg), "_blank");
+});
+
+document.getElementById("contact").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = e.target;
+  var msg = "Hola, soy " + f.nombre.value + ".\n" + f.mensaje.value +
+            (f.telefono.value ? "\nTeléfono: " + f.telefono.value : "") +
+            (f.correo.value ? "\nCorreo: " + f.correo.value : "");
+  window.open(waLink(msg), "_blank");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
